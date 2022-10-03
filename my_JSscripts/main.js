@@ -27,20 +27,6 @@ window.onload = function () {
         "fillOpacity": 0.4
     }
 
-    $.getJSON("data/nnChapters.geojson", function (data) {
-        // L.geoJson(data).addTo(map);
-        var geojson = L.geoJson(data, {
-            style: myStyle,
-            onEachFeature: function (feature, layer) {
-                var chPopup = "<b>Chapter: <b><br>" + feature.properties.Chapter
-                layer.bindPopup(chPopup);
-            }
-        });
-
-        geojson.addTo(map)
-        geojson.bringToBack();
-    });
-
     // Modal window 
     // Get the modal
     var modal = document.getElementById("myModal");
